@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.baseinfotech.juscep.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider_layout"
+
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_height="250dp"
+        />
+
+
+
+        <ImageView
+            android:layout_below="@+id/slider_layout"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_layout"
+            android:src="@drawable/screenshot"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/button_layout"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:text="Register"
+            android:background="@drawable/my_button_background_bordered"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            android:textAllCaps="false"
+            android:text="Log In"
+            android:background="@drawable/my_button_background_solid"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
