@@ -4,5 +4,8 @@
     <color name="colorPrimaryDark">#FFAB00</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="lightYellow">#FFE57F</color>
+
+    <color name="veryLightYellow">#FFF8E1</color>
     <color name="black_overlay">#66000000</color>
 </resources>

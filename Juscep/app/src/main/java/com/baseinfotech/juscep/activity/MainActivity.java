@@ -1,5 +1,6 @@
 package com.baseinfotech.juscep.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -42,11 +43,11 @@ public class MainActivity extends AppCompatActivity
         mDemoSlider = (SliderLayout) findViewById(R.id.slider_layout);
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("construction1",R.drawable.construction1);
-        file_maps.put("construction2",R.drawable.construction2);
-        file_maps.put("construction3",R.drawable.construction3);
-        file_maps.put("construction4", R.drawable.construction4);
-        file_maps.put("construction5", R.drawable.construction5);
+        file_maps.put("1",R.drawable.construction1);
+        file_maps.put("2",R.drawable.construction2);
+        file_maps.put("3",R.drawable.construction3);
+        file_maps.put("4", R.drawable.construction4);
+        file_maps.put("5", R.drawable.construction5);
 
         for(String name : file_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);
@@ -171,7 +172,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
-        Toast.makeText(this,slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -187,5 +188,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    public void onRegister(View view) {
+        startActivity(new Intent(this, RegisterActivity.class));
+    }
+
+    public void onLogin(View view) {
     }
 }
