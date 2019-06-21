@@ -9,7 +9,7 @@
     tools:showIn="@layout/app_bar_main">
 
     <com.daimajia.slider.library.SliderLayout
-        android:id="@+id/slider_layout"
+        android:name="@+id/slider_layout"
 
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
@@ -34,7 +34,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:id="@+id/button_layout"
+        android:name="@+name/button_layout"
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
@@ -42,7 +42,7 @@
 
         <Button
             android:layout_width="150dp"
-            android:id="@+id/register_button"
+            android:name="@+name/register_button"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:onClick="onRegister"
@@ -53,7 +53,7 @@
 
         <Button
             android:layout_width="150dp"
-            android:id="@+id/login_button"
+            android:name="@+name/login_button"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:layout_marginLeft="30dp"

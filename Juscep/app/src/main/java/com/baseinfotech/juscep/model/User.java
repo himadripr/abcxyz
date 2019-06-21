@@ -1,7 +1,7 @@
 package com.baseinfotech.juscep.model;
 
 public class User {
-    private String name;
+    private String id;
     private String mobileNumber;
     private UserType userType;
 
@@ -9,19 +9,19 @@ public class User {
 
     }
 
-    public User(String name, String mobileNumber, UserType userType) {
-        this.name = name;
+    public User(String id, String mobileNumber, UserType userType) {
+        this.id = id;
         this.mobileNumber = mobileNumber;
         this.userType = userType;
 
     }
 
     public String getName() {
-        return name;
+        return id;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.id = name;
     }
 
     public String getMobileNumber() {

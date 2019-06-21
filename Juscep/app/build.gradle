@@ -29,7 +29,7 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
     //implementation 'com.msg91.sendotpandroid.library:library:0.4'
-   // implementation 'com.googlecode.libphonenumber:libphonenumber:VERSION_OF_DEPENDENCIE' //required
+    // implementation 'com.googlecode.libphonenumber:libphonenumber:VERSION_OF_DEPENDENCIE' //required
     implementation 'com.msg91.sendotpandroid.library:library:0.4'
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

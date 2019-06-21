@@ -1,9 +1,11 @@
 package com.baseinfotech.juscep.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -62,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity implements VerificationL
         editTexts[9] = passwordText;
         editTexts[10] = confirmPasswordText;
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -202,6 +205,7 @@ public class RegisterActivity extends AppCompatActivity implements VerificationL
                 } else {
                     Toast.makeText(RegisterActivity.this, responseString, Toast.LENGTH_LONG).show();
                     System.out.println("Response value: "+responseString);
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                     RegisterActivity.this.finish();
 
                 }
@@ -235,6 +239,19 @@ public class RegisterActivity extends AppCompatActivity implements VerificationL
             mVerification.resend("text");
             Toast.makeText(this, "OTP sent.", Toast.LENGTH_SHORT).show();
             findViewById(R.id.resend_otp_button).setVisibility(View.GONE);
+        }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(this);
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

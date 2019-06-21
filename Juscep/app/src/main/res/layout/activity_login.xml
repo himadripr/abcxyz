@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.baseinfotech.juscep.activity.LoginActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#90000000"
+        android:gravity="center"
+
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:text="@string/login_details"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:name="@+name/top_otp_layout"
+        android:visibility="visible"
+        android:layout_margin="16dp"
+        android:background="@color/veryLightYellow"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="@+name/mobile_number_text"
+            android:inputType="phone"
+            android:background="@android:color/white"
+            android:padding="10dp"
+            android:hint="@string/mobile"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="@+name/password_text"
+            android:layout_marginTop="15dp"
+            android:inputType="textPassword"
+            android:background="@android:color/white"
+            android:padding="10dp"
+            android:hint="@string/password"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:background="@drawable/my_button_background_solid"
+            android:layout_marginTop="20dp"
+            android:text="@string/login"
+            android:name="@+name/login_button"
+            android:onClick="onLogin"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

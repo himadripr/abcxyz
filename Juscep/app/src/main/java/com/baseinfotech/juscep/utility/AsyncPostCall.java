@@ -17,6 +17,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.internal.Util;
 
 public class AsyncPostCall extends AsyncTask<Void, Void, Boolean> {
         private WeakReference<Activity> activityRef;
@@ -28,6 +29,7 @@ public class AsyncPostCall extends AsyncTask<Void, Void, Boolean> {
         private String id;
         private String responseValue;
         private String progressDialogTitle, progressDialogMessage;
+        private boolean isNetworkAvailable;
 
         public AsyncPostCall(Activity activity, String url, String id, HashMap<String, String> keyValueMap, String progressDialogTitle, String progressDialogMessage , PostCallCallback postCallCallback){
             this.url = url;
@@ -37,6 +39,7 @@ public class AsyncPostCall extends AsyncTask<Void, Void, Boolean> {
             this.progressDialogTitle = progressDialogTitle;
             this.progressDialogMessage = progressDialogMessage;
             activityRef = new WeakReference<Activity>(activity);
+            isNetworkAvailable = Utilities.isNetworkAvailable(activity);
 
         }
 
@@ -48,41 +51,43 @@ public class AsyncPostCall extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            OkHttpClient client = new OkHttpClient();
-            FormBody.Builder builder = new FormBody.Builder();
+            if (isNetworkAvailable){
+                OkHttpClient client = new OkHttpClient();
+                FormBody.Builder builder = new FormBody.Builder();
 
-            for (Map.Entry<String, String> entry: keyValueMap.entrySet()){
-                builder.add(entry.getKey(), entry.getValue());
-            }
+                for (Map.Entry<String, String> entry: keyValueMap.entrySet()){
+                    builder.add(entry.getKey(), entry.getValue());
+                }
 
-            RequestBody formBody = builder.build();
+                RequestBody formBody = builder.build();
 
-            Request request = new Request.Builder()
-                    .url(this.url)
-                    .post(formBody)
-                    .build();
+                Request request = new Request.Builder()
+                        .url(this.url)
+                        .post(formBody)
+                        .build();
 
-            try {
-                response = client.newCall(request).execute();
                 try {
-                    String value = response.body().string();
-                    if (!value.isEmpty()){
-                        responseValue = value;
+                    response = client.newCall(request).execute();
+                    try {
+                        String value = response.body().string();
+                        if (!value.isEmpty()){
+                            responseValue = value;
+                        }
+                        System.out.println(value);
+                    } catch (Throwable t){
+                        //response = null;
+                        return false;
                     }
-                    System.out.println(value);
-                } catch (Throwable t){
+                    return true;
+                    // Do something with the response.
+                } catch (IOException e) {
                     //response = null;
+                    e.printStackTrace();
                     return false;
                 }
-                return true;
-                // Do something with the response.
-            } catch (IOException e) {
-                //response = null;
-                e.printStackTrace();
-                return false;
             }
 
-           // return true;
+            return false;
         }
 
 
@@ -91,6 +96,11 @@ public class AsyncPostCall extends AsyncTask<Void, Void, Boolean> {
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
             progressDialog.dismiss();
-            postCallCallback.processResponse(response, id, responseValue);
+            if (!isNetworkAvailable){
+                Utilities.showBasicAlertDialog(activityRef.get(), "No internet connection", "");
+            } else {
+                postCallCallback.processResponse(response, id, responseValue);
+            }
+
         }
     }

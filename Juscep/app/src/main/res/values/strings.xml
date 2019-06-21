@@ -11,4 +11,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="new_user_registration">New User Registration</string>
+    <string name="login_details">Login Details</string>
+    <string name="mobile">Mobile</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>

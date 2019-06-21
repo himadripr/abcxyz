@@ -19,18 +19,21 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/juscep" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text=""
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="@dimen/nav_header_vertical_spacing"-->
+        <!--android:text=""-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 
     <TextView
-        android:name="@+name/textView"
+        android:name="@+name/user_mobile_number_header_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="5dp"
+        android:textStyle="italic"
         android:textColor="@android:color/black"
-        android:text="" />
+        android:text="986578976" />
 
 </LinearLayout>
