@@ -9,7 +9,7 @@
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
     <TextView
-        android:name="@+name/fullscreen_content"
+        android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -27,7 +27,7 @@
         android:fitsSystemWindows="true">
 
         <LinearLayout
-            android:name="@+name/fullscreen_content_controls"
+            android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             tools:ignore="UselessParent">
 
             <Button
-                android:name="@+name/dummy_button"
+                android:id="@+id/dummy_button"
                 style="?metaButtonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

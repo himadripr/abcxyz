@@ -13,7 +13,7 @@
     <!--android:background="@drawable/side_nav_bar"-->
 
     <ImageView
-        android:name="@+name/imageView"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -27,7 +27,7 @@
         <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 
     <TextView
-        android:name="@+name/user_mobile_number_header_textview"
+        android:id="@+id/user_mobile_number_header_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"

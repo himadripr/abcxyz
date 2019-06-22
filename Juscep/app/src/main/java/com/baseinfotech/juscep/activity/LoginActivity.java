@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println("Response value: "+responseString);
                     User user = new User();
                     user.setMobileNumber(mobileText.getText().toString().trim());
-                    user.setName(responseString);
+                    user.setId(responseString);
                     user.setUserType(ApplicationConstants.SELECTED_USER_TYPE_FOR_LOGIN_OR_REGISTRATION);
                     SharedPreferenceUtil.setLoggedInUser(LoginActivity.this, user);
                     startActivity(new Intent(LoginActivity.this, BookingActivity.class));

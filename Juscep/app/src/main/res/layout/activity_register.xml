@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:name="@+name/top_otp_layout"
+        android:id="@+id/top_otp_layout"
         android:visibility="visible"
         android:layout_margin="16dp"
         android:background="@color/veryLightYellow"
@@ -32,7 +32,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="@+name/mobile_number_for_otp"
+            android:id="@+id/mobile_number_for_otp"
             android:inputType="phone"
             android:background="@android:color/white"
             android:padding="10dp"
@@ -43,7 +43,7 @@
             android:background="@drawable/my_button_background_solid"
             android:layout_marginTop="20dp"
             android:text="Get OTP"
-            android:name="@+name/get_otp_button"
+            android:id="@+id/get_otp_button"
             android:onClick="getOtp"
             android:textAllCaps="false"
             android:layout_height="wrap_content" />
@@ -59,7 +59,7 @@
             android:orientation="vertical"
             android:visibility="gone"
             android:layout_margin="16dp"
-            android:name="@+name/bottom_register_layout"
+            android:id="@+id/bottom_register_layout"
             android:layout_marginTop="30dp"
             android:background="@color/veryLightYellow"
             android:padding="20dp"
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/mobile_number_text"
+                android:id="@+id/mobile_number_text"
                 android:text=""
                 android:inputType="phone"
                 android:enabled="false"
@@ -82,7 +82,7 @@
                 android:background="@android:color/white"
                 android:padding="10dp"
                 android:inputType="phone"
-                android:name="@+name/otp_text"
+                android:id="@+id/otp_text"
                 android:layout_marginTop="10dp"
                 android:hint="OTP"/>
             <EditText
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/name_text"
+                android:id="@+id/name_text"
                 android:layout_marginTop="10dp"
                 android:hint="Name"/>
             <EditText
@@ -99,7 +99,7 @@
                 android:background="@android:color/white"
                 android:padding="10dp"
                 android:inputType="textEmailAddress"
-                android:name="@+name/email_text"
+                android:id="@+id/email_text"
                 android:layout_marginTop="10dp"
                 android:hint="Email Id"/>
             <EditText
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/aadhaar_number_text"
+                android:id="@+id/aadhaar_number_text"
                 android:inputType="phone"
                 android:layout_marginTop="10dp"
                 android:hint="Aadhar Number"/>
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/pan_number_text"
+                android:id="@+id/pan_number_text"
                 android:layout_marginTop="10dp"
                 android:hint="Pan Number"/>
             <EditText
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/address_text"
+                android:id="@+id/address_text"
                 android:layout_marginTop="10dp"
                 android:hint="Address"/>
             <EditText
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/city_text"
+                android:id="@+id/city_text"
                 android:layout_marginTop="10dp"
                 android:hint="City"/>
             <EditText
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/state_text"
+                android:id="@+id/state_text"
                 android:layout_marginTop="10dp"
                 android:hint="State"/>
             <EditText
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:padding="10dp"
-                android:name="@+name/password_text"
+                android:id="@+id/password_text"
                 android:inputType="textPassword"
                 android:layout_marginTop="10dp"
                 android:hint="Password"/>
@@ -159,7 +159,7 @@
                 android:background="@android:color/white"
                 android:padding="10dp"
                 android:inputType="textPassword"
-                android:name="@+name/confirm_password_text"
+                android:id="@+id/confirm_password_text"
                 android:layout_marginTop="10dp"
                 android:hint="Confirm Password"/>
 
@@ -168,7 +168,7 @@
                 android:background="@drawable/my_button_background_solid"
                 android:layout_marginTop="20dp"
                 android:text="Submit"
-                android:name="@+name/submit_button"
+                android:id="@+id/submit_button"
                 android:onClick="onSubmitRegistrationDetails"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content" />
@@ -177,7 +177,7 @@
                 android:layout_width="match_parent"
                 android:background="@drawable/my_button_background_bordered"
                 android:layout_marginTop="20dp"
-                android:name="@+name/resend_otp_button"
+                android:id="@+id/resend_otp_button"
                 android:text="Resend OTP"
                 android:onClick="onResendOtp"
                 android:textAllCaps="false"

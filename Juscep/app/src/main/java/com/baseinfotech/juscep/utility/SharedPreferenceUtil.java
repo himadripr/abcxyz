@@ -28,7 +28,7 @@ public class SharedPreferenceUtil {
     public static void setLoggedInUser(Context context, User user){
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_SHARED_PREFERENCE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(NAME, user.getName());
+        editor.putString(NAME, user.getId());
         editor.putString(MOBILE_NUMBER, user.getMobileNumber());
         editor.putInt(TYPE_ORDINAL, user.getUserType().ordinal());
         editor.apply();

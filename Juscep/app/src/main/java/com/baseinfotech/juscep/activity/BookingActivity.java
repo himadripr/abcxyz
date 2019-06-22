@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.baseinfotech.juscep.R;
@@ -31,8 +32,10 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View headerView = navigationView.getHeaderView(0);
         navigationView.setNavigationItemSelectedListener(this);
-        userMobileNumberHeaderTextView = (TextView) navigationView.findViewById(R.id.user_mobile_number_header_textview);
+        userMobileNumberHeaderTextView = (TextView) headerView.findViewById(R.id.user_mobile_number_header_textview);
         userMobileNumberHeaderTextView.setText(SharedPreferenceUtil.getLoggedInUSer(this).getMobileNumber());
     }
 
@@ -75,7 +78,7 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
 
         if (id == R.id.nav_booking) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_about_us) {
