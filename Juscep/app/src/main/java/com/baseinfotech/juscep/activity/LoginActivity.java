@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     findViewById(R.id.submit_button).setEnabled(true);
                     Toast.makeText(LoginActivity.this, "Some problem occurred", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, responseString, Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_LONG).show();
                     System.out.println("Response value: "+responseString);
                     User user = new User();
                     user.setMobileNumber(mobileText.getText().toString().trim());

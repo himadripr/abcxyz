@@ -52,14 +52,19 @@
             android:screenOrientation="nosensor" />
         <activity
             android:name=".activity.BookingActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MyAccountActivity" />
-        <activity android:name=".activity.GalleryActivity" />
-        <activity android:name=".activity.AboutUsActivity" />
-        <activity android:name=".activity.FAQActivity" />
-        <activity android:name=".activity.PrivacyPolicyActivity" />
-        <activity android:name=".activity.ContactUsActivity" />
-        <activity android:name=".activity.ChangePasswordActivity"></activity>
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar"  />
+        <activity android:name=".activity.MyAccountActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.GalleryActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.AboutUsActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.FAQActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.PrivacyPolicyActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.ContactUsActivity" android:screenOrientation="nosensor"/>
+        <activity android:name=".activity.ChangePasswordActivity"
+            android:screenOrientation="nosensor"
+            >
+
+        </activity>
     </application>
 
 </manifest>

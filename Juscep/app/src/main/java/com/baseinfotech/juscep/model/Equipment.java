@@ -11,6 +11,11 @@ public class Equipment {
         name = "Select Equipment";
     }
 
+    public Equipment(String id, String name){
+        this.id = id;
+        this.name  = name;
+    }
+
     public String getId() {
         return id;
     }

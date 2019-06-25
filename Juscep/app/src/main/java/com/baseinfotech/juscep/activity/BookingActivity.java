@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,16 +36,26 @@ import com.baseinfotech.juscep.utility.AsyncPostCall;
 import com.baseinfotech.juscep.utility.SharedPreferenceUtil;
 import com.baseinfotech.juscep.utility.Utilities;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class BookingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -112,9 +123,74 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
     }
 
     private void loadEquipmentList(){
-//        String url = "http://baseinfotech.com/omshreesaidwar/sliderapi.php";
+
+
         String url = ApiUtility.equipmentListApi;
-        final ProgressDialog progressDialog = ProgressDialog.show(this, "loading....","");
+        final ProgressDialog progressDialog = ProgressDialog.show(BookingActivity.this, "loading....","");
+
+//        OkHttpClient client = new OkHttpClient();
+//
+//        Request request = new Request.Builder()
+//                .url(ApiUtility.equipmentListApi)
+//                .build();
+//
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, final Response response) throws IOException {
+//                if (!response.isSuccessful()) {
+//                    throw new IOException("Unexpected code " + response);
+//                } else {
+//                    // do something wih the result
+//                    String value = response.body().string();
+//
+//                    if (!value.isEmpty()){
+//                        JsonParser parser = new JsonParser();
+//                        JsonElement tradeElement = parser.parse(value);
+//                        JsonArray result = tradeElement.getAsJsonArray();
+//                        progressDialog.dismiss();
+//                        List<Equipment> equipmentList = new ArrayList<>();
+//
+//                        for (int i=0; i<result.size(); i++){
+//                            JsonObject jsonObject = (JsonObject) result.get(i);
+//                            Equipment equipment = new Equipment();
+//                            equipment.setId(jsonObject.get("id").getAsString());
+//                            equipment.setName(jsonObject.get("name").getAsString());
+//                            equipmentList.add(equipment);
+//
+//                        }
+//                        createEquipmentQuantityAdapterAssignToRecyclerView(equipmentList);
+//                    }
+//                    System.out.println(value);
+//                }
+//            }
+//        });
+
+//        try {
+//            Response response = client.newCall(request).execute();
+//            try {
+//                String value = response.body().string();
+//                if (!value.isEmpty()){
+//
+//                }
+//                System.out.println(value);
+//            } catch (Throwable t){
+//                //response = null;
+//
+//            }
+//
+//            // Do something with the response.
+//        } catch (IOException e) {
+//            //response = null;
+//            e.printStackTrace();
+//
+//        }
+
+
         Ion.with(this)
                 .load(url)
                 .asJsonArray()
@@ -123,6 +199,7 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
                     public void onCompleted(Exception e, JsonArray result) {
                         progressDialog.dismiss();
                         List<Equipment> equipmentList = new ArrayList<>();
+
                         if (e==null){
                             for (int i=0; i<result.size(); i++){
                                 JsonObject jsonObject = (JsonObject) result.get(i);
@@ -135,7 +212,15 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
                             createEquipmentQuantityAdapterAssignToRecyclerView(equipmentList);
 
                         } else {
-                            Toast.makeText(BookingActivity.this, "No equipment data present.", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(BookingActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            equipmentList.add(new Equipment("499", "Jcb Extractor"));
+                            equipmentList.add(new Equipment("500", "Pocklen Excavator"));
+                            equipmentList.add(new Equipment("501", "Hydra Crane"));
+                            equipmentList.add(new Equipment("502", "Tractor Crane"));
+                            equipmentList.add(new Equipment("503", "Water Tank Lorry"));
+                            equipmentList.add(new Equipment("504", "Road Roller"));
+                            equipmentList.add(new Equipment("505", "Vibrator Road Rollar"));
+                            createEquipmentQuantityAdapterAssignToRecyclerView(equipmentList);
 
                         }
 
@@ -272,5 +357,14 @@ public class BookingActivity extends AppCompatActivity implements NavigationView
             }
         }).execute();
 
+    }
+
+    class DownloadAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            return null;
+        }
     }
 }
