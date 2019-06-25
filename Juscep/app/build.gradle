@@ -32,6 +32,10 @@ dependencies {
     // implementation 'com.googlecode.libphonenumber:libphonenumber:VERSION_OF_DEPENDENCIE' //required
     implementation 'com.msg91.sendotpandroid.library:library:0.4'
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
+    compile 'com.android.support:cardview-v7:27.1.1'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    compile 'com.koushikdutta.ion:ion:2.+'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }

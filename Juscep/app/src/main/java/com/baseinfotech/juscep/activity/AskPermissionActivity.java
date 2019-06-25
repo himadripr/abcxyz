@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.baseinfotech.juscep.R;
+import com.baseinfotech.juscep.utility.SharedPreferenceUtil;
 
 
 public class AskPermissionActivity extends AppCompatActivity {
@@ -55,8 +56,12 @@ public class AskPermissionActivity extends AppCompatActivity {
 
     private void startAction(){
 
+        if (SharedPreferenceUtil.getLoggedInUSer(this)!=null) {
+            startActivity(new Intent(this, BookingActivity.class));
+        } else {
+            startActivity(new Intent(this, MainActivity.class));
+        }
 
-        startActivity(new Intent(this, MainActivity.class));
         finish();
 
 

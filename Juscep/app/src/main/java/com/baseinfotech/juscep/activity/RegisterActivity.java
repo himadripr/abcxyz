@@ -104,6 +104,10 @@ public class RegisterActivity extends AppCompatActivity implements VerificationL
 
     public void getOtp(View view) {
         EditText[] editTexts = new EditText[1];
+        if (mobileNumberForOTP.getText().toString().trim().length()!=10){
+            Utilities.showBasicAlertDialog(this, "Alert", "Mobile number should of 10 digits.");
+            return;
+        }
         editTexts[0] = mobileNumberForOTP;
         if (isAnyTextFieldEmpty(editTexts)){
             Utilities.showBasicAlertDialog(this, "Alert", "Empty mobile number");

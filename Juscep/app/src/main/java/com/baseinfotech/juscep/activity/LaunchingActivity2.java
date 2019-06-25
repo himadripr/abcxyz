@@ -16,7 +16,7 @@ import com.baseinfotech.juscep.utility.SharedPreferenceUtil;
 
 public class LaunchingActivity2 extends AppCompatActivity {
 
-    private static final long START_TIME = 4000;
+    private static final long START_TIME = 2000;
     private static final long INTERVAL = 1000;
 
     @Override
@@ -26,16 +26,16 @@ public class LaunchingActivity2 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_launching2);
 
-//        if (isAnyUserLoggedIn()){
-//            MyCountDownTimer myCountDownTimer = new MyCountDownTimer(START_TIME, INTERVAL);
-//            myCountDownTimer.start();
-//
-//        } else {
-//            findViewById(R.id.vendor_button).setVisibility(View.VISIBLE);
-//            findViewById(R.id.customer_button).setVisibility(View.VISIBLE);
-//        }
-        findViewById(R.id.vendor_button).setVisibility(View.VISIBLE);
-        findViewById(R.id.customer_button).setVisibility(View.VISIBLE);
+        if (isAnyUserLoggedIn()){
+            MyCountDownTimer myCountDownTimer = new MyCountDownTimer(START_TIME, INTERVAL);
+            myCountDownTimer.start();
+
+        } else {
+            findViewById(R.id.vendor_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.customer_button).setVisibility(View.VISIBLE);
+        }
+
+
 
 
     }

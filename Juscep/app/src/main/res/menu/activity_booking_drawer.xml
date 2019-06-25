@@ -4,30 +4,60 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_booking"
-            android:icon="@drawable/ic_booking_icon"
-            android:title="Booking" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_photo_library"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_about_us"
-            android:icon="@drawable/ic_menu_about_us"
-            android:title="About Us" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_faq"
-            android:title="Faq's" />
-        <item
-            android:id="@+id/nav_privacy_policy"
-            android:icon="@drawable/ic_menu_privacy_policy"
-            android:title="Privacy Policy" />
-        <item
-            android:id="@+id/nav_contact_us"
-            android:icon="@drawable/ic_menu_contact_us"
-            android:title="Contact Us" />
+        <item android:title="User">
+            <menu>
+                <item
+                    android:id="@+id/nav_my_account"
+                    android:icon="@drawable/ic_my_account"
+                    android:title="My Account" />
+
+
+                <item
+                    android:id="@+id/nav_change_password"
+                    android:icon="@drawable/ic_change_password"
+                    android:title="Change Password" />
+
+                <item
+                    android:id="@+id/nav_log_out"
+                    android:icon="@drawable/ic_log_out"
+                    android:title="Log Out" />
+
+
+            </menu>
+        </item>
+    </group>
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="Action">
+            <menu>
+                <item
+                    android:id="@+id/nav_booking"
+                    android:icon="@drawable/ic_booking_icon"
+                    android:title="Booking" />
+
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_menu_photo_library"
+                    android:title="Gallery" />
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:icon="@drawable/ic_menu_about_us"
+                    android:title="About Us" />
+                <item
+                    android:id="@+id/nav_faq"
+                    android:icon="@drawable/ic_menu_faq"
+                    android:title="Faq's" />
+                <item
+                    android:id="@+id/nav_privacy_policy"
+                    android:icon="@drawable/ic_menu_privacy_policy"
+                    android:title="Privacy Policy" />
+                <item
+                    android:id="@+id/nav_contact_us"
+                    android:icon="@drawable/ic_menu_contact_us"
+                    android:title="Contact Us" />
+            </menu>
+        </item>
     </group>
 
     <item android:title="Communicate">

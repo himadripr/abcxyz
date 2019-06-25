@@ -119,28 +119,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     protected void onStop() {
         // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
         mDemoSlider.stopAutoCycle();
@@ -152,17 +130,32 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        switch (id){
+            case R.id.nav_my_account:
+                startActivity(new Intent(this, MyAccountActivity.class));
+                break;
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            case R.id.nav_change_password:
+                startActivity(new Intent(this, ChangePasswordActivity.class));
+                break;
+            case R.id.nav_booking:
 
-        } else if (id == R.id.nav_about_us) {
-
-        } else if (id == R.id.nav_contact_us) {
-
-        } else if (id == R.id.nav_share) {
-
+                break;
+            case R.id.nav_gallery:
+                startActivity(new Intent(this, GalleryActivity.class));
+                break;
+            case R.id.nav_about_us:
+                startActivity(new Intent(this, AboutUsActivity.class));
+                break;
+            case R.id.nav_faq:
+                startActivity(new Intent(this, FAQActivity.class));
+                break;
+            case R.id.nav_privacy_policy:
+                startActivity(new Intent(this, PrivacyPolicyActivity.class));
+                break;
+            case R.id.nav_contact_us:
+                startActivity(new Intent(this, ContactUsActivity.class));
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
