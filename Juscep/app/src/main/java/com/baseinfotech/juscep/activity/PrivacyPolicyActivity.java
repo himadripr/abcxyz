@@ -24,7 +24,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
         WebView mywebview = (WebView) findViewById(R.id.webView);
         if (!Utilities.isNetworkAvailable(this)) {
-            Toast.makeText(this, "No internet connection..", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "No internet connection..", Toast.LENGTH_SHORT).show();
         } else {
             // mywebview.loadUrl("https://www.javatpoint.com/");
 
@@ -32,9 +32,9 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
             mywebview.loadData(data, "text/html", "UTF-8"); */
 
             //mywebview.loadUrl(ApiUtility.ABOUT_US_URL);
-            mywebview.getSettings().setJavaScriptEnabled(true);
-            mywebview.setWebViewClient(new AppWebViewClients(this));
-            mywebview.loadUrl(ApiUtility.PRIVACY_POLICY);
+            //mywebview.getSettings().setJavaScriptEnabled(true);
+            //mywebview.setWebViewClient(new AppWebViewClients(this));
+            //mywebview.loadUrl(ApiUtility.PRIVACY_POLICY);
         }
     }
 
